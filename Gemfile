@@ -36,6 +36,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'thin'
   gem 'rspec-rails', '~> 2.14.0'
   gem 'pry-rails'
   gem 'pry-debugger'

@@ -3,6 +3,6 @@
 
 <canvas id="myChart" width="400" height="400"></canvas>
 
-<p><%= @ideas.count %></p>
-<p><%= @articles.count %></p>
-<p><%= @locations.count %></p>
+<p id="idea" data-chart="<%= @ideas_chart %>"><%= @ideas.count %> | <%= @ideas_chart %></p>
+<p id="article" data-chart="<%= @articles_chart %>"><%= @articles.count %> | <%= @articles_chart %></p>
+<p id="location" data-chart="<%= @locations_chart %>"><%= @locations.count %> | <%= @locations_chart %></p>

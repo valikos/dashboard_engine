@@ -7,8 +7,15 @@ class Idea < ActiveRecord::Base
   end
 
   def self.to_chart
-    last_week_activity.each do |i|
-      arr puts i
+    activity = []
+
+    8.times do |t|
+      start_of_day = 1.week.ago.midnight + t.day
+      end_of_day = 1.week.ago.end_of_day + t.day
+
+      activity << where(created_at: start_of_day..end_of_day).count
     end
+
+    activity
   end
 end

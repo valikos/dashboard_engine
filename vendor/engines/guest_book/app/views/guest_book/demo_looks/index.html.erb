@@ -1,0 +1,27 @@
+<h1>Listing demo_looks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demo_looks.each do |demo_look| %>
+      <tr>
+        <td><%= demo_look.title %></td>
+        <td><%= link_to 'Show', demo_look %></td>
+        <td><%= link_to 'Edit', edit_demo_look_path(demo_look) %></td>
+        <td><%= link_to 'Destroy', demo_look, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Demo look', new_demo_look_path %>

@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'zurb-foundation'
 
+gem 'guest_book', path: 'vendor/engines/guest_book'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

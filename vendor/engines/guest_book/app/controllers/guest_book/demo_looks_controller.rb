@@ -3,6 +3,7 @@ require_dependency "guest_book/application_controller"
 module GuestBook
   class DemoLooksController < ApplicationController
     before_action :set_demo_look, only: [:show, :edit, :update, :destroy]
+    layout 'application'
 
     # GET /demo_looks
     def index

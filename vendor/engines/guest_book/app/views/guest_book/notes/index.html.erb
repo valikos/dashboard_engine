@@ -1,4 +1,19 @@
+<!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#">Notes</a></li>
-  <li><a href="#">New</a></li>
+  <li class="active"><a href="#notes" data-toggle="tab">Notes</a></li>
+  <li><a href="#new" data-toggle="tab">New</a></li>
 </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="notes">
+
+    <ul class="list-group">
+      <%= render @notes %>
+    </ul>
+
+  </div>
+  <div class="tab-pane" id="new">
+    <%= render partial: 'new' %>
+  </div>
+</div>

@@ -1,111 +1,67 @@
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-
-    <!-- Uncomment to make IE8 render like IE7 -->
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
-
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "DasboardEngine" %></title>
     <%= csrf_meta_tags %>
-  </head>
 
-  <body>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
 
-<!-- Nav Bar -->
-
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="nav-bar right">
-       <ul class="button-group">
-         <li><a href="#" class="button">Link 1</a></li>
-         <li><a href="#" class="button">Link 2</a></li>
-         <li><a href="#" class="button">Link 3</a></li>
-         <li><a href="#" class="button">Link 4</a></li>
-        </ul>
-      </div>
-      <h1>Dashboard <small>engine</small></h1>
-      <hr />
-    </div>
-  </div>
-
-  <!-- End Nav -->
-
-
-  <!-- Main Page Content and Sidebar -->
-
-  <div class="row">
-
-    <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
-
-      <%= yield %>
-
-    </div>
-
-    <!-- End Main Content -->
-
-      <!-- Sidebar -->
-
-      <aside class="large-3 columns">
-
-        <h5>Categories</h5>
-        <ul class="side-nav">
-          <li><a href="#">News</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Fun</a></li>
-          <li><a href="#">Weasels</a></li>
-        </ul>
-
-        <div class="panel">
-          <h5>Featured</h5>
-          <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-          <a href="#">Read More →</a>
-        </div>
-
-      </aside>
-
-      <!-- End Sidebar -->
-    </div>
-
-    <!-- End Main Content and Sidebar -->
-
-
-    <!-- Footer -->
-
-    <footer class="row">
-      <div class="large-12 columns">
-        <hr />
-        <div class="row">
-          <div class="large-6 columns">
-            <p>© Copyright no one at all. Go to town.</p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
     <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">DasboardEngine</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+          <div class="span3">
+            <div class="well sidebar-nav">
+              <h3>Sidebar</h3>
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+        </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div> <!-- /container -->
+
   </body>
 </html>

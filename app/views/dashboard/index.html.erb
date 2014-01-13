@@ -1,14 +1,8 @@
+<script>
+  window.chartDataSource = <%= raw @dash_chart.to_json %>;
+</script>
+
 <h1>Dashboard#index</h1>
 <p>Find me in app/views/dashboard/index.html.erb</p>
 
-<canvas id="myChart" width="400" height="400"></canvas>
-
-<p id="idea" data-chart="<%= @ideas_chart %>">
-  <%= @ideas.count %> | <%= @ideas_chart %>
-</p>
-<p id="article" data-chart="<%= @articles_chart %>">
-  <%= @articles.count %> | <%= @articles_chart %>
-</p>
-<p id="location" data-chart="<%= @locations_chart %>">
-  <%= @locations.count %> | <%= @locations_chart %>
-</p>
+<div id="chartContainer" style="max-width:800px;height: 400px;"></div>

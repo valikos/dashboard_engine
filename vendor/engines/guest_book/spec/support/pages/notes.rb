@@ -3,4 +3,7 @@ class Notes < SitePrism::Page
 
   element :new_tab,   '#new'
   element :notes_tab, '#notes'
+
+  element :description_field, '#note_description'
+  element :submit_button, '#submit_note'
 end

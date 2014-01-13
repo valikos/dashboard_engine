@@ -16,4 +16,6 @@ RSpec.configure do |config|
   config.mock_with :rspec
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
+  config.include Capybara::DSL, type: :request
 end
+Capybara.default_driver = :selenium

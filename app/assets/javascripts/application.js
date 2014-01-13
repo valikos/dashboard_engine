@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require chart
+//= require globalize
+//= require dx.chartjs
 //= require_tree .

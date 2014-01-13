@@ -1,0 +1,19 @@
+
+$(function () {
+  $("#chartContainer").dxChart({
+    dataSource: window.chartDataSource,
+    commonSeriesSettings: {
+      argumentField: 'day'
+    },
+    series: [{
+        name: 'Idea',
+        valueField: 'ideas'
+    }, {
+        name: 'Article',
+        valueField: 'articles'
+    },{
+        name: 'Location',
+        valueField: 'locations'
+    }]
+  });
+});

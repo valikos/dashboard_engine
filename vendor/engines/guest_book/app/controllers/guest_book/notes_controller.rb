@@ -8,9 +8,8 @@ module GuestBook
     end
 
     def create
-      @note = Note.new(params[:note])
-      @note.create
-      redirect_to :index
+      Note.create!(params.require(:note).permit(:description))
+      redirect_to action: :index
     end
   end
 end

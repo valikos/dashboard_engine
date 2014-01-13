@@ -5,9 +5,14 @@ source "https://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'rspec-rails', '~> 2.14.0'
-gem 'factory_girl_rails', '~> 4.3.0'
-gem 'site_prism'
+group :test do
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'capybara', '~> 2.2.1'
+  gem 'site_prism'
+  gem 'factory_girl_rails', '~> 4.3.0'
+  gem 'selenium-webdriver', '~> 2.39.0'
+  gem 'pry'
+end
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

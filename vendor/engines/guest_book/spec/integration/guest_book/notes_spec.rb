@@ -3,12 +3,13 @@ require 'spec_helper'
 module GuestBook
   describe 'Notes' do
     before :each do
-      @note = Note.new
+      @note = Notes.new
       @note.load
     end
 
-    it 'test' do
-      (1 + 1).should eq 2
+    it 'contain page elements' do
+      @note.should have_notes_tab
+      @note.should have_new_tab
     end
   end
 end
